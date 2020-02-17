@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻直播间</title>
+    <link href="/asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" rel="stylesheet">
+    <link href="/asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
+    <style type="text/css">
+        /* Chart.js */
+
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="../asserts/js/jquery-3.2.1.slim.min.js"></script>
+    <!--引入抽取topbar-->
+    <div th:replace="public/bar.html::topbar"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <!--引入抽取sidebar-->
+            <div th:replace="public/bar::sidebar(activeuri='/news')"></div>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div class="table table-view">
+                    <div th:each="news:${pageInfo.list}">
+                        <div class="card " style="width: 18rem;float: left;margin-left:3rem;margin-top:3rem;background-color: #808060;" >
+                            <div class="card-body" style="background-color: snow">
+                                 <h5 class="card-title">[[${news.title}]]</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">[[${news.author}]]</h6>
+                            </div>
+                            <div class="card-body" style="background-color: snow">
+                                    <div style="width: 16rem;height:18rem;overflow:hidden;">
+                                    <a  class="card-text" style="" data-toggle="popover" th:title="${news.title}" th:data-content="${news.content}" href="#">[[${news.content}]]</a>
+                                    </div>
+                                <br/>
+                                    <div>
+                                        <a href="#" class="card-link ">喜欢</a>
+                                        <a href="#" class="card-link " style="color: red">不喜欢</a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <<!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script type="text/javascript" src="../asserts/js/popper.min.js"></script>
+    <script type="text/javascript" src="../asserts/js/bootstrap.min.js"></script>
+
+    <!-- Icons -->
+    <script type="text/javascript" src="../asserts/js/feather.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
+    <!--弹出框-->
+    <script type="text/javascript">
+        $(".card-text").popover();
+    </script>
+    <!-- Graphs -->
+    <script type="text/javascript" src="../asserts/js/Chart.min.js"></script>
+    <script>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                datasets: [{
+                    data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+                    lineTension: 0,
+                    backgroundColor: 'transparent',
+                    borderColor: '#007bff',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#007bff'
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: false,
+                }
+            }
+        });
+    </script>
+
+    </body>
+</html>
