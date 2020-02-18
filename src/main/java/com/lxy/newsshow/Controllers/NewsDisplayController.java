@@ -24,16 +24,4 @@ public class NewsDisplayController {
        model.addAttribute("pageInfo", pageInfo);
        return "News/list";
    }
-    /*public String getAllNews(Model model){
-       Collection<News> newss = (Collection<News>) newsMapper.getAllNews();
-      *//* String result ="";
-       for(News news:newss){
-           result += news.toString();
-       }*//*
-
-       model.addAttribute("newss", newss);
-       return "News/list";
-//       return result;
-   }*/
-
 }

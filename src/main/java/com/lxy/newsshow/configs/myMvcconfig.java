@@ -13,7 +13,7 @@ public class myMvcconfig implements WebMvcConfigurer {
 //    添加视图映射
         public void addViewControllers(ViewControllerRegistry registry) {
 //            首页映射
-            registry.addViewController("/").setViewName("index");
+            registry.addViewController("/").setViewName("welcome");
             registry.addViewController("/index.html").setViewName("index");
         }
 //       配置localeResolver
@@ -25,7 +25,7 @@ public class myMvcconfig implements WebMvcConfigurer {
         //    添加资源列表
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("classpath:/templates/");
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/templates/","classpath:/static/");
     }
 //    配置过滤器
    /* @Override
