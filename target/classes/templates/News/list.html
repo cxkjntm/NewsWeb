@@ -8,6 +8,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
+    <link href="/asserts/css/public.css" th:href="@{/asserts/css/public.css}" rel="stylesheet">
     <style type="text/css">
         /* Chart.js */
 
@@ -37,35 +38,52 @@
 </head>
 <body>
     <script type="text/javascript" src="../asserts/js/jquery-3.2.1.slim.min.js"></script>
-    <!--引入抽取topbar-->
-    <div th:replace="public/bar.html::topbar"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <!--引入抽取sidebar-->
-            <div th:replace="public/bar::sidebar(activeuri='/news')"></div>
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                <div class="table table-view">
-                    <div th:each="news:${pageInfo.list}">
-                        <div class="card " style="width: 18rem;float: left;margin-left:3rem;margin-top:3rem;background-color: #808060;" >
-                            <div class="card-body" style="background-color: snow">
-                                 <h5 class="card-title">[[${news.title}]]</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">[[${news.author}]]</h6>
-                            </div>
-                            <div class="card-body" style="background-color: snow">
+    <!--background-->
+    <div class="bg-img" id="bg-img">
+        <!--引入抽取topbar-->
+        <div th:replace="public/bar.html::topbar"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <!--引入抽取sidebar-->
+                <!--<div th:replace="public/bar::sidebar(activeuri='/news')"></div>-->
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                    <div class="table table-view">
+                        <div th:each="news:${pageInfo.list}">
+                            <div class="card " style="width: 18rem;float: left;margin-left:3rem;margin-top:3rem;" >
+                                <div class="card-body" style="background-color: azure">
+                                    <h5 class="card-title">[[${news.title}]]</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted" style="font-family: 'qiudaoyu'">[[${news.author}]]</h6>
+
+                                </div>
+                                <div class="card-body">
                                     <div style="width: 16rem;height:18rem;overflow:hidden;">
-                                    <a  class="card-text" style="" data-toggle="popover" th:title="${news.title}" th:data-content="${news.content}" href="#">[[${news.content}]]</a>
+                                        <p  class="card-text" style="" data-toggle="popover" th:title="${news.title}" th:data-content="${news.content}" href="#">[[${news.content}]]</p>
                                     </div>
-                                <br/>
+                                    <br/>
                                     <div>
                                         <a href="#" class="card-link ">喜欢</a>
                                         <a href="#" class="card-link " style="color: red">不喜欢</a>
                                     </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
+                </main>
+                <div style="width: 1400px;height: 100px;margin-top: 1rem;margin-left: 7rem; font-size: 15pt">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li th:class="${pageInfo.hasPreviousPage?'page-item' :'page-item disabled'}">
+                                <a class="page-link" href="#" th:href="@{'/news/'+${pageInfo.getPrePage()}}" >Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">[[${pageInfo.pageNum}]] </a></li>
+                            <li th:class="${pageInfo.hasNextPage?'page-item' :'page-item disabled'}">
+                                <a class="page-link" href="#" th:href="@{'/news/'+${pageInfo.getNextPage()}}" >Next</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            </main>
+            </div>
         </div>
     </div>
     <<!-- Bootstrap core JavaScript

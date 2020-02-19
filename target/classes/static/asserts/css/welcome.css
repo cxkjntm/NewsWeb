@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "qiudaoyu";
+    src: url("qiudaoyu.TTF");
+}
+h1,p,button{
+    font-family: "qiudaoyu";
+}
+.backstyle{
+    height: 700px;width: 1535px;background-color: azure;
+}
+.headstyle{
+    height: 764px;
+    width: 1536px;
+    position: absolute;
+    background-position: center center;
+    background-size: cover;
+}
+#headstyle{
+    background-image: url("../img/live-news.JPG");
+}
+.headcontent{
+
+    color: aliceblue;
+    font-family: 'qiudaoyu';
+    font-size: 50pt;
+}
+.pcontent{
+    margin-top: 530px;
+    font-size: 30pt;
+    margin-left: 650px;
+    color: aliceblue;
+}
+#sign{
+    margin-left: 1400px;
+    font-size: 15pt;
+    color: azure;
+}

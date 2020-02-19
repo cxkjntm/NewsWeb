@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'qiudaoyu';
+    src: url("qiudaoyu.ttf");
+}
+h1,p,a,button{
+    font-family: 'qiudaoyu';
+}
+.backstyle{
+    height: 700px;width: 1535px;background-color: azure;
+}
+.headstyle{
+    height: 764px;
+    width: 1536px;
+    position: absolute;
+    background-position: center center;
+    background-size: cover;
+}
+#headstyle{
+    background-image: url("../img/live-news.JPG");
+}
+.headcontent{
+
+    color: aliceblue;
+    font-family: 'qiudaoyu';
+    font-size: 50pt;
+}
+.pcontent{
+    margin-top: 530px;
+    font-size: 30pt;
+    margin-left: 650px;
+    color: aliceblue;
+}
+#common{
+    margin-left: 1300px;
+    font-size: 15pt;
+    color: azure;
+}
+#common-right{
+    width: 20%;
+    font-size: 15pt;
+    color: azure;
+
+}
+#common-left{
+    width: 78%;
+    font-size: 15pt;
+    color: azure;
+
+}
+#p-right{
+    margin-left: 100px;
+}
+#p-left{
+    margin-left: 100px;
+}
+.bg-img{
+    height: 764px;
+    width: 1536px;
+    position: absolute;
+    background-position: center center;
+    background-size: cover;
+}
+#bg-img{
+    background-image: url("../img/background.JPG");
+}
+.docker{
+    width: 1536px;height: 100px;background-color: red;margin-top: 1rem;margin-left: 1rem;
+}
+
+
+

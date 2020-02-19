@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>新闻直播间</title>
+    <!-- Bootstrap core CSS -->
+    <link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="asserts/css/public.css" rel="stylesheet">
+</head>
+<body>
+<div class="backstyle">
+    <!--sign in | register-->
+
+        <div class="headstyle" id="headstyle" >
+            <div>
+                <p class="navbar-text navbar-right" id="common"> <a href="/index" class="navbar-link" style="color: azure">登录</a> | <a href="#" class="navbar-link" style="color: azure">注册</a></p>
+            </div>
+            <!--<h1 class="headcontent" >新闻直播间</h1>-->
+            <p class="pcontent">这是最懂你的新闻网站，你一定会喜欢他</p>
+            <div style="float: left;margin-left: 650px">
+                <div >
+                    <p><a class="btn btn-primary btn-lg" href="#" role="button" th:href="@{/news/1}">发现新闻</a></p>
+                </div>
+            </div>
+            </div>
+
+</div>
+</body>
+</html>

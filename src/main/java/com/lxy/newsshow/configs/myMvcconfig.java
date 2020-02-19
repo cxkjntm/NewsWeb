@@ -14,7 +14,7 @@ public class myMvcconfig implements WebMvcConfigurer {
         public void addViewControllers(ViewControllerRegistry registry) {
 //            首页映射
             registry.addViewController("/").setViewName("welcome");
-            registry.addViewController("/index.html").setViewName("index");
+            registry.addViewController("/index").setViewName("index");
         }
 //       配置localeResolver
         @Bean

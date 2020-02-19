@@ -12,7 +12,7 @@ public class NewsService  {
     @Autowired
     NewsMapper newsMapper;
    public PageInfo<News> getNewsByPage(int pageNum){
-       PageHelper.startPage(pageNum,6);
+       PageHelper.startPage(pageNum,3);
        List<News> list=newsMapper.getAllNews();
        PageInfo<News> pageInfo = new PageInfo<>(list,pageNum);
        return pageInfo;
