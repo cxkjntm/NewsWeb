@@ -2,7 +2,7 @@
     font-family: 'qiudaoyu';
     src: url("qiudaoyu.ttf");
 }
-h1,p,a,button{
+h1,p,h5,h6,a,button{
     font-family: 'qiudaoyu';
 }
 .backstyle{
@@ -17,6 +17,14 @@ h1,p,a,button{
 }
 #headstyle{
     background-image: url("../img/live-news.JPG");
+}
+#c-background{
+    height:370px;
+    width: 286px;
+
+    background-position: center center;
+    background-size: cover ;
+    background-image: url("../img/card-background.PNG");
 }
 .headcontent{
 
@@ -66,6 +74,5 @@ h1,p,a,button{
 .docker{
     width: 1536px;height: 100px;background-color: red;margin-top: 1rem;margin-left: 1rem;
 }
-
 
 

@@ -49,21 +49,27 @@
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
                     <div class="table table-view">
                         <div th:each="news:${pageInfo.list}">
-                            <div class="card " style="width: 18rem;float: left;margin-left:3rem;margin-top:3rem;" >
-                                <div class="card-body" style="background-color: azure">
+                            <div class="card " style="width: 18rem;height:32rem;float: left;margin-left:3rem;margin-top:3rem;" >
+                                <div class="card-body" style="background-color: whitesmoke">
+                                    <!--card-title-->
+                                    <div style="height: 100px">
                                     <h5 class="card-title">[[${news.title}]]</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted" style="font-family: 'qiudaoyu'">[[${news.author}]]</h6>
-
+                                </div>
+                                    <div style="height:20px;">
+                                        <!--author-->
+                                        <h6 class="card-subtitle mb-2 text-muted" style="font-family: 'qiudaoyu'">[[${news.author}]]</h6>
+                                    </div>
                                 </div>
                                 <div class="card-body">
+                                    <!--card-content-->
                                     <div style="width: 16rem;height:18rem;overflow:hidden;">
                                         <p  class="card-text" style="" data-toggle="popover" th:title="${news.title}" th:data-content="${news.content}" href="#">[[${news.content}]]</p>
                                     </div>
                                     <br/>
-                                    <div>
+
                                         <a href="#" class="card-link ">喜欢</a>
                                         <a href="#" class="card-link " style="color: red">不喜欢</a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

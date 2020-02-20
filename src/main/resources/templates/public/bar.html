@@ -17,7 +17,7 @@
     <div id="common-right" style="float: left">
         <p class="navbar-text navbar-right" id="p-right">
             <a href="#" class="navbar-link" style="color: azure">[[${session.loginuser.getUserName()}]] </a>|
-                <a href="#" class="navbar-link" style="color: azure">登出</a>
+                <a href="#" class="navbar-link" th:href="@{'/loginOut'}" style="color: azure">登出</a>
         </p>
     </div>
 </div>
