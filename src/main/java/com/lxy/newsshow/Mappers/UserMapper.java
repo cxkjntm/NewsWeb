@@ -1,10 +1,7 @@
 package com.lxy.newsshow.Mappers;
 
 import com.lxy.newsshow.entities.Userinfo;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -26,4 +23,5 @@ public interface UserMapper {
     public boolean DeleteByUserID(Integer id);
     @Update("update Userinfo set UserName=#{username},UserPassword=#{password},Age=#{age},Gender=#{gender},Telephone=#{telephone},Address=#{address} where id = #{id}")
     public boolean UpdateByUserID(Userinfo userinfo);
+    public boolean CreateFriend(@Param("tableName") String tableName);
 }

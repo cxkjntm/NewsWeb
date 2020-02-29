@@ -28,6 +28,10 @@ public class publicController {
         int Age = Integer.parseInt(age);
         Userinfo userinfo = new Userinfo(username,password,Age,gender,telephone,address);
         boolean flag = userService.InsertIntoUserInfo(userinfo);
+        Userinfo userinfo1 = userService.getUserByName(username);
+        String tablename = "friend_"+userinfo1.getId();
+        System.out.println(tablename);
+        userService.CreateTable(tablename);
         if(flag) return "index";
         else
         return "404";

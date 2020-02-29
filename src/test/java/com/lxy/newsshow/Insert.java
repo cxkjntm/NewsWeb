@@ -12,7 +12,6 @@ public class Insert {
     UserMapper userMapper;
     @Test
     void Insert(){
-        Userinfo userinfo = new Userinfo("test","123456", 27, "male", "123456", "123456");
-        boolean flag = userMapper.InsertIntoUserInfo(userinfo.getUserName(), userinfo.getUserPassword(), (int) userinfo.getAge(), userinfo.getGender(), userinfo.getTelephone(), userinfo.getAddress());
+    userMapper.CreateFriend("friend_999");
     }
 }

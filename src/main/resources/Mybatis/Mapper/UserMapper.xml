@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lxy.newsshow.Mappers.UserMapper">
+    <update id="CreateFriend" parameterType="String">
+        create table ${tableName} (
+             ID int (11) primary key ,
+             friend_ID int (11) not null ,
+            FOREIGN KEY (friend_ID) REFERENCES Userinfo (ID)
+        )
+    </update>
+</mapper>
