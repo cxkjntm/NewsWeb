@@ -21,5 +21,11 @@ public class UserService {
     public Userinfo getUserByName(String username){
         return userMapper.getUserByName(username);
     }
+   public boolean InsertIntoUserInfo(Userinfo userinfo){
+        boolean flag = userMapper.InsertIntoUserInfo(userinfo.getUserName(), userinfo.getUserPassword(), (int) userinfo.getAge(), userinfo.getGender(), userinfo.getTelephone(), userinfo.getAddress());
+//        boolean flag = userMapper.InsertIntoUserInfo("test","123456", 27, "male", "123456", "123456");
+        if(flag) return true;
+        else return false;
+   }
 
 }

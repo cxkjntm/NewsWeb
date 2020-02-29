@@ -11,7 +11,15 @@ public class Userinfo {
   private String telephone;
   private String address;
 
-
+  public Userinfo(String userName, String userPassword, long age, String gender, String telephone, String address){
+    this.userName = userName;
+    this.userPassword =userPassword;
+    this.age = age;
+    this.gender = gender;
+    this.telephone = telephone;
+    this.address = address;
+  }
+  Userinfo(){}
   public long getId() {
     return id;
   }

@@ -15,7 +15,10 @@ public interface UserMapper {
     public Userinfo getUserByName(String username);
     @Select("select id from friend where id = #{id} ")
     public List<Userinfo> getAllFriends(Integer id);
-    @Insert("insert into userinfo('UserName','UserPassword','Age','Gender','Telephone','Address') value(#{username},#{password},#{age},#{gender},#{telephone},#{address})")
+    @Insert({
+            "insert into userinfo(UserName,UserPassword,Age,Gender,Telephone,Address) " +
+            "values(#{username},#{password},#{age},#{gender},#{telephone},#{address})"
+            })
     public boolean InsertIntoUserInfo(String username,String password,
                                       Integer age,String gender,
                                       String telephone,String address);

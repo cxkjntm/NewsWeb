@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.lxy.newsshow.NewsshowApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 10.892 s <<< FAILURE! - in com.lxy.newsshow.NewsshowApplicationTests
+contextLoads  Time elapsed: 4.697 s  <<< ERROR!
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: 
+Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at com.lxy.newsshow.NewsshowApplicationTests.contextLoads(NewsshowApplicationTests.java:18)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at com.lxy.newsshow.NewsshowApplicationTests.contextLoads(NewsshowApplicationTests.java:18)
+
