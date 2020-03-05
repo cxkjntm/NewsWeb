@@ -5,9 +5,20 @@
 <mapper namespace="com.lxy.newsshow.Mappers.UserMapper">
     <update id="CreateFriend" parameterType="String">
         create table ${tableName} (
-             ID int (11) primary key ,
+             ID int (11) primary key auto increment,
              friend_ID int (11) not null ,
             FOREIGN KEY (friend_ID) REFERENCES Userinfo (ID)
         )
     </update>
+    <update id="CreateArtical" parameterType="String">
+        create table ${artcialname}(
+            ID int (11) primary key auto_increment ,
+            artical_ID int (11) unique
+            foreign key(artical_ID) references news (ID)
+        )
+    </update>
+    <insert id="InsertIntoFriend" parameterType="com.lxy.newsshow.entities.Friend">
+        insert into ${tableFriend} (friend_ID)
+            values(#{friend_ID})
+    </insert>
 </mapper>

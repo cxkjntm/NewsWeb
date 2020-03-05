@@ -3,6 +3,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lxy.newsshow.Mappers.NewsMapper;
 import com.lxy.newsshow.entities.News;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,4 +18,5 @@ public class NewsService  {
        PageInfo<News> pageInfo = new PageInfo<>(list,pageNum);
        return pageInfo;
    }
+
 }

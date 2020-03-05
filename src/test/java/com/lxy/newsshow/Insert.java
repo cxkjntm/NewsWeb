@@ -1,6 +1,9 @@
 package com.lxy.newsshow;
 
+import com.lxy.newsshow.Mappers.ArticalMapper;
 import com.lxy.newsshow.Mappers.UserMapper;
+import com.lxy.newsshow.entities.ArticalComment;
+import com.lxy.newsshow.entities.Friend;
 import com.lxy.newsshow.entities.Userinfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,7 @@ public class Insert {
     UserMapper userMapper;
     @Test
     void Insert(){
-    userMapper.CreateFriend("friend_999");
+        Friend friend = new Friend("friend_14",2);
+        userMapper.InsertIntoFriend(friend);
     }
 }

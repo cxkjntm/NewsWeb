@@ -37,7 +37,7 @@
     </style>
 </head>
 <body>
-    <script type="text/javascript" src="../asserts/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="../asserts/js/jquery.min.js"></script>
     <!--background-->
     <div class="bg-img" id="bg-img">
         <!--引入抽取topbar-->
@@ -63,12 +63,14 @@
                                 <div class="card-body">
                                     <!--card-content-->
                                     <div style="width: 16rem;height:18rem;overflow:hidden;">
+                                        <input type="hidden" th:value="${news.id}" id="ID"/>
+                                        <input type="hidden" th:value="${news.title}" id="Title"/>
                                         <p  class="card-text" style="" data-toggle="popover" th:title="${news.title}" th:data-content="${news.content}" href="#">[[${news.content}]]</p>
                                     </div>
                                     <br/>
 
-                                        <a href="#" class="card-link ">喜欢</a>
-                                        <a href="#" class="card-link " style="color: red">不喜欢</a>
+                                        <a href="javascript:void(0)" class="card-link " onclick="like()">喜欢</a>
+                                        <a href="javascript:;" class="card-link " style="color: red" onclick="dislike()">不喜欢</a>
 
                                 </div>
                             </div>
@@ -107,6 +109,45 @@
     <!--弹出框-->
     <script type="text/javascript">
         $(".card-text").popover();
+    </script>
+    <script type="text/javascript">
+        function like(){
+            var param= {'ID':$("#ID").val(),'Title':$("#Title").val()};
+            $.ajax({
+                url:"/like",
+                type:"post",
+                data:JSON.stringify(param),
+                async:false,
+                contentType:"application/json;charset=utf-8",
+                dataType: "json",
+                success:function (data) {
+                    alert($("#Title").val()+"\n已经加入喜爱列表！");
+                },
+                error:function (e) {
+                    console.log(e);
+                }
+            });
+
+        }
+        function dislike(){
+            var param= {'ID':$("#ID").val(),'Title':$("#Title").val()};
+            $.ajax({
+                url:"/dislike",
+                type:"post",
+                data:JSON.stringify(param),
+                async:false,
+                contentType:"application/json;charset=utf-8",
+                dataType: "json",
+                success:function (data) {
+                    alert($("#Title").val()+"\n已经加入不喜爱列表！");
+                },
+                error:function (e) {
+                    console.log(e);
+                }
+            });
+
+        }
+
     </script>
     <!-- Graphs -->
     <script type="text/javascript" src="../asserts/js/Chart.min.js"></script>

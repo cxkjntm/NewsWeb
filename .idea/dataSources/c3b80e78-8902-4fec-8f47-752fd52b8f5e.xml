@@ -961,59 +961,45 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="242" parent="6" name="news"/>
-    <table id="243" parent="6" name="userinfo">
+    <table id="242" parent="6" name="artical_14"/>
+    <table id="243" parent="6" name="friend_14"/>
+    <table id="244" parent="6" name="news"/>
+    <table id="245" parent="6" name="userinfo">
       <Comment>UserInformation</Comment>
     </table>
-    <column id="244" parent="242" name="ID">
+    <column id="246" parent="242" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="242" name="AUTHOR">
+    <column id="247" parent="242" name="artical_ID">
       <Position>2</Position>
-      <Comment>新闻来源</Comment>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="242" name="TITLE">
+    <column id="248" parent="242" name="perference">
       <Position>3</Position>
-      <Comment>新闻标题</Comment>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="242" name="CONTENT">
-      <Position>4</Position>
-      <Comment>新闻正文</Comment>
-      <DataType>longtext|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="248" parent="242" name="DATA">
-      <Position>5</Position>
-      <Comment>类别</Comment>
-      <DataType>date|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="249" parent="242" name="title_index">
-      <ColNames>TITLE</ColNames>
-      <Unique>1</Unique>
+    <index id="249" parent="242" name="artical_ID">
+      <ColNames>artical_ID</ColNames>
       <Type>btree</Type>
     </index>
     <key id="250" parent="242" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID
-TITLE</ColNames>
+      <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="251" parent="242" name="title_index">
-      <ColNames>TITLE</ColNames>
-      <UnderlyingIndexName>title_index</UnderlyingIndexName>
-    </key>
+    <foreign-key id="251" parent="242" name="artical_14_ibfk_1">
+      <ColNames>artical_ID</ColNames>
+      <RefTableName>news</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
     <column id="252" parent="243" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -1021,40 +1007,116 @@ TITLE</ColNames>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="243" name="UserName">
+    <column id="253" parent="243" name="friend_ID">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="254" parent="243" name="friend_ID">
+      <ColNames>friend_ID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="255" parent="243" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="256" parent="243" name="friend_14_ibfk_1">
+      <ColNames>friend_ID</ColNames>
+      <RefTableName>userinfo</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="257" parent="244" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="258" parent="244" name="AUTHOR">
+      <Position>2</Position>
+      <Comment>新闻来源</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="259" parent="244" name="TITLE">
+      <Position>3</Position>
+      <Comment>新闻标题</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="260" parent="244" name="CONTENT">
+      <Position>4</Position>
+      <Comment>新闻正文</Comment>
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="261" parent="244" name="DATE">
+      <Position>5</Position>
+      <Comment>类别</Comment>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="262" parent="244" name="title_index">
+      <ColNames>TITLE</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="263" parent="244" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID
+TITLE</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="264" parent="244" name="title_index">
+      <ColNames>TITLE</ColNames>
+      <UnderlyingIndexName>title_index</UnderlyingIndexName>
+    </key>
+    <column id="265" parent="245" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="266" parent="245" name="UserName">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="243" name="UserPassword">
+    <column id="267" parent="245" name="UserPassword">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="243" name="Age">
+    <column id="268" parent="245" name="Age">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="243" name="Gender">
+    <column id="269" parent="245" name="Gender">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="243" name="Telephone">
+    <column id="270" parent="245" name="Telephone">
       <Position>6</Position>
       <DataType>varchar(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="243" name="Address">
+    <column id="271" parent="245" name="Address">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="259" parent="243" name="PRIMARY">
+    <key id="272" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lxy.newsshow.Mappers.NewsMapper;
 import com.lxy.newsshow.Mappers.UserMapper;
+import com.lxy.newsshow.entities.Friend;
 import com.lxy.newsshow.entities.News;
 import com.lxy.newsshow.entities.Userinfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,16 @@ public class UserService {
    }
    public boolean CreateTable(String tablename){
         boolean flag = userMapper.CreateFriend(tablename);
+        if (flag) return true;
+        else return false;
+   }
+   public boolean CreateArtical(String tablename){
+        boolean flag = userMapper.CreateArtical(tablename);
+        if(flag) return true;
+        else return false;
+   }
+   public boolean InsertIntoFriend(Friend friend){
+        boolean flag = userMapper.InsertIntoFriend(friend);
         if (flag) return true;
         else return false;
    }

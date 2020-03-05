@@ -1,5 +1,6 @@
 package com.lxy.newsshow.Mappers;
 
+import com.lxy.newsshow.entities.Friend;
 import com.lxy.newsshow.entities.Userinfo;
 import org.apache.ibatis.annotations.*;
 
@@ -24,4 +25,6 @@ public interface UserMapper {
     @Update("update Userinfo set UserName=#{username},UserPassword=#{password},Age=#{age},Gender=#{gender},Telephone=#{telephone},Address=#{address} where id = #{id}")
     public boolean UpdateByUserID(Userinfo userinfo);
     public boolean CreateFriend(@Param("tableName") String tableName);
+    public boolean CreateArtical(@Param("artcialname") String tablename);
+    public boolean InsertIntoFriend(Friend friend);
 }
