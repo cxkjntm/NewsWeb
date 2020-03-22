@@ -2,7 +2,7 @@
     font-family: "qiudaoyu";
     src: url("qiudaoyu.TTF");
 }
-h1,p,button{
+h1,h2,h3,p,button{
     font-family: "qiudaoyu";
 }
 .backstyle{

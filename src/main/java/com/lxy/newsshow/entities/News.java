@@ -1,14 +1,24 @@
 package com.lxy.newsshow.entities;
 
 
+import javax.xml.crypto.Data;
+
 public class News {
 
   private long id;
   private String author;
   private String title;
   private String content;
-  private String category;
+  private String catagory;
+  private Data time;
 
+  public Data getTime() {
+    return time;
+  }
+
+  public void setTime(Data time) {
+    this.time = time;
+  }
 
   public long getId() {
     return id;
@@ -46,12 +56,12 @@ public class News {
   }
 
 
-  public String getCategory() {
-    return category;
+  public String getCatagory() {
+    return catagory;
   }
 
-  public void setCategory(String category) {
-    this.category = category;
+  public void setCatagory(String category) {
+    this.catagory = category;
   }
 
   @Override

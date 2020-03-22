@@ -17,7 +17,8 @@ public interface NewsMapper {
             @Result(id=true,column="id",property="id",javaType=Integer.class),
             @Result(column="author",javaType=String.class,property="author"),
             @Result(column="title",property="title",javaType=String.class),
-            @Result(column = "content",javaType = String.class,property = "content")
+            @Result(column = "content",javaType = String.class,property = "content"),
+            @Result(column = "catalog",javaType = String.class,property = "catagory")
     })
     public List<News> getAllNews();
 

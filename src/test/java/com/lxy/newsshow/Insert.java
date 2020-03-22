@@ -1,10 +1,7 @@
 package com.lxy.newsshow;
 
-import com.lxy.newsshow.Mappers.ArticalMapper;
 import com.lxy.newsshow.Mappers.UserMapper;
-import com.lxy.newsshow.entities.ArticalComment;
 import com.lxy.newsshow.entities.Friend;
-import com.lxy.newsshow.entities.Userinfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
